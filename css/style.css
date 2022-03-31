@@ -1,0 +1,8 @@
+@import url("https://fonts.google.com/specimen/Ubuntu?query=ubuntu#standard-styles");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
