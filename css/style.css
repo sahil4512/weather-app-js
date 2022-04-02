@@ -7,5 +7,60 @@
 }
 
 body {
-    font-family: "Ubuntu", sans-serif;
+  font-family: "Roboto Mono", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  height: 100vh;
+}
+
+.main-container {
+  border-radius: 5px;
+  overflow: hidden;
+  width: 450px;
+}
+
+.main-header {
+  background-color: #488c63;
+  color: #fff;
+  padding: 20px;
+}
+
+.main-header h2 {
+  margin-bottom: 10px;
+}
+
+.main-header p {
+  margin-bottom: 10px;
+}
+
+.weather-search {
+  border: 0;
+  border-radius: 5px;
+  padding: 10px 15px;
+  width: 70%;
+  font-size: 15px;
+}
+
+input:focus {
+  outline: none;
+}
+
+.search-button {
+  background-color: #e96565;
+  border-radius: 10px;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.input-box {
+  display: flex;
+  justify-content: space-between;
 }
