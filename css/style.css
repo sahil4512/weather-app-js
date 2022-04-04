@@ -8,45 +8,65 @@
 
 body {
   font-family: "Roboto Mono", sans-serif;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
+  background-color: #457de0;
   height: 100vh;
 }
 
+/* ---- main container ---- */
 .main-container {
-  border-radius: 5px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 10px;
   overflow: hidden;
-  width: 450px;
 }
 
 .main-header {
-  background-color: #488c63;
   color: #fff;
   padding: 20px;
 }
 
-.main-header h2 {
+/* ---- heading ---- */
+.heading {
+  font-size: 3rem;
   margin-bottom: 10px;
 }
 
-.main-header p {
+/* ---- small heading ---- */
+.small-heading {
   margin-bottom: 10px;
 }
 
-.weather-search {
-  border: 0;
-  border-radius: 5px;
-  padding: 10px 15px;
+/* ---- inputbox ---- */
+
+.input-box form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.weather-search,
+input {
   width: 70%;
-  font-size: 15px;
+  font-size: 2rem;
+  height: 40px;
+  padding: 5px 5px 10px;
+  border: none;
+  background: none;
+  outline: none;
+  border-bottom: 1px solid;
+}
+
+.weather-search,
+input::placeholder {
+  color: #fff;
 }
 
 input:focus {
   outline: none;
 }
 
+/* ---- search button ---- */
 .search-button {
   background-color: #e96565;
   border-radius: 10px;
@@ -56,11 +76,185 @@ input:focus {
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 16px;
+  font-size: 20px;
+  cursor: pointer;
+}
+/* ---- error ---- */
+.error {
+  padding: 20px;
+  background-color: crimson;
+  margin-top: 20px;
+  display: none;
+  animation: reducetime 1s;
+}
+
+@keyframes reducetime {
+  0% {
+    width: 35%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+/* ---- results ---- */
+.results .cities-results {
+  display: grid;
+  grid-gap: 32px 20px;
+  grid-template-columns: repeat(4, 1fr);
+  margin: 70px 0 20px;
+  list-style: none;
+}
+
+.cities-results .city {
+  position: relative;
+  padding: 40px 10%;
+  border-radius: 20px;
+  background: #7a4040;
+  color: #fff;
+}
+
+.cities-results .city::after {
+  content: "";
+  width: 90%;
+  height: 50px;
+  position: absolute;
+  bottom: -12px;
+  left: 5%;
+  z-index: -1;
+  opacity: 0.3;
+  border-radius: 20px;
+  background: #000;
+}
+
+.cities-results .city::before {
+  content: "";
+  width: 90%;
+  height: 50px;
+  position: absolute;
+  bottom: 315px;
+  left: 5%;
+  z-index: -1;
+  opacity: 0.3;
+  border-radius: 20px;
+  background: #000;
+}
+
+.results figcaption {
+  margin-top: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.results .city-temp {
+  font-size: 5rem;
+  font-weight: bold;
+  margin-top: 10px;
+  color: #fff;
+}
+
+.results .city sup {
+  font-size: 0.5em;
+}
+
+.results .city-name sup {
+  padding: 0.2em 0.6em;
+  border-radius: 30px;
+  color: #fff;
+  background: #000;
+}
+
+.results .city-icon {
+  margin-top: 10px;
+  width: 100px;
+  height: 100px;
+}
+
+.reset-button {
+  background-color: #e96565;
+  border-radius: 10px;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
   cursor: pointer;
 }
 
-.input-box {
+.button-box {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 20px;
 }
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 90px;
+  height: 34px;
+}
+
+.switch input {
+  display: none;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ca2222;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #2ab934;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196f3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(55px);
+}
+
+/*------ ADDED CSS ---------*/
+.slider:after {
+  content: "°C";
+  color: white;
+  display: block;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  font-size: 10px;
+  font-family: Verdana, sans-serif;
+}
+
+input:checked + .slider:after {
+  content: "°F";
+}
+
+/*--------- END --------*/

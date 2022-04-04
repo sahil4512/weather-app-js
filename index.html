@@ -14,21 +14,33 @@
   <body>
     <div class="main-container">
       <header class="main-header">
-        <h2>Weather App</h2>
-        <p>Search any city or country for weather</p>
+        <h1 class="heading">Weather App</h1>
+        <p class="small-heading">Search any city or country for weather</p>
         <div class="input-box">
-          <input
-            type="text"
-            id="weather-search"
-            class="weather-search"
-            placeholder="City or Country"
-          />
-          <button class="search-button" id="search">
-            <i class="fas fa-search"></i>
-          </button>
+          <div class="button-box">
+            <label class="switch">
+              <input type="checkbox" id="togBtn" />
+              <div class="slider round"></div>
+            </label>
+            <button class="reset-button">Reset</button>
+          </div>
+          <form class="form-box">
+            <input
+              type="text"
+              id="weather-search"
+              class="weather-search"
+              placeholder="City or Country"
+            />
+            <button type="submit" class="search-button" id="search">
+              Search&nbsp;<i class="fas fa-search"></i>
+            </button>
+          </form>
         </div>
+        <span class="error"></span>
       </header>
-      <div class="results"></div>
+      <div class="results">
+        <ul class="cities-results"></ul>
+      </div>
     </div>
   </body>
   <script src="./js/script.js"></script>
