@@ -258,3 +258,48 @@ input:checked + .slider:after {
 }
 
 /*--------- END --------*/
+@media only screen and (max-width: 960px) {
+  /* styles for browsers larger than 960px; */
+  .results .cities-results {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  /* styles for browsers larger than 768px; */
+
+  .results .cities-results {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* On screens that are 640px wide or less,
+  make the columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 640px) {
+  .weather-search,
+  input {
+    width: 100%;
+  }
+  .input-box form {
+    display: block;
+  }
+
+  .search-button {
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .results .cities-results {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 488px) {
+  .results .cities-results {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

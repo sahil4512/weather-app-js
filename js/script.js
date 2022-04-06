@@ -1,5 +1,5 @@
 // YOUR API KEY https://openweathermap.org/api
-const API_KEY = "";
+const API_KEY = "2059bcf1ada9dd3ea12fd6ca5913641e";
 const search = document.querySelector(".form-box");
 const input = document.querySelector(".form-box input");
 const error_text = document.querySelector(".error");
